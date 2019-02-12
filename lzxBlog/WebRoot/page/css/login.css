@@ -1,0 +1,150 @@
+/*----清除浏览器自带默认边距*/
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+blockquote,
+
+/* structural elements 结构元素 */
+
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+
+/* list elements 列表元素 */
+
+pre,
+
+/* text formatting elements 文本格式元素 */
+
+fieldset,
+button,
+input,
+textarea,
+
+/* form elements 表单元素 */
+
+th,
+td {
+	/* table elements 表格元素 */
+	margin: 0;
+	padding: 0;
+}
+
+ul li {
+	list-style-type: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover,
+a:visited,
+a:link,
+a:active {
+	color: black;
+}
+
+body {
+	background: url(../img/logBg2.jpeg) center center;
+	text-align: center;
+}
+*{
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+.Logister {
+	position: relative;
+	margin: auto;
+	width: 400px;
+	height: 480px;
+	margin-top: 80px;
+	
+}
+.Logister h1{
+	position: absolute;
+	text-align: center;
+	left: 30px;
+	font-size: 50px;
+	top: 40px;		/*40*/
+	transition: top 1s;
+	
+}
+.touMingBG{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: white;
+	z-index: -100;
+	opacity: 0.5;
+	border-radius: 10px;
+}
+.tLog {
+	position: absolute;
+	margin: 0 auto;
+	top: 100px;
+	width: 85%;
+	height: 100%;
+	/*	background: red;*/
+	padding: 30px;
+	text-align: left;
+	opacity: 0;
+	transition: opacity 1s;
+}
+
+.tLog p {
+	width: 28%;
+	/*background: yellow;*/
+	height: 38px;
+	line-height: 38px;
+	float: left;
+	font-size: 20px;
+	margin: 6px 0px;
+}
+
+/*用户名和密码input*/
+.tLogInput,
+.tLogSubmit {
+	margin: 0px 0px;
+	width: 97%;
+	height: 30px;
+	text-align: left;
+	font-size: 20px;
+	padding: 5px 0px;
+}
+
+.tLogInput{	
+	padding: 5px 0px 5px 10px;
+}
+
+.tLogSubmit {
+	border: 1px #3083ff solid;
+	border-radius: 4px;
+	background-color: #3487ff;
+	box-shadow: 0 5px 8px 0 rgba(24, 95, 255, .1);
+	color: #fff;
+	text-align: center;
+	font-weight: lighter;
+	background-image: linear-gradient(0deg, #398bff, #3083ff);
+	width: 100%;
+	height: 60px;
+	margin: 20px 0 8px;
+	font-size: 24px;
+}
+.GOregister{
+	position: absolute;
+	left: 160px;
+	bottom: 20px;
+}

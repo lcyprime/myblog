@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=0">
+<meta name="format-detection" content="telephone=no" />
+<title>分页</title>
+<link rel="stylesheet" href="pagination.css">
+</head>
+<body>
+<div id="ht-page" class="ht-page"></div>
+<script src="/lzxBlog/page/js/jquery.js"></script>
+
+<script src="pagination.js"></script>
+<script typeof="text/javascript">
+
+	var pageSize = 10;
+	var recordCount =11;
+    /*
+     * 初始化插件
+     * @param  object:翻页容器对象
+     * @param  function:回调函数
+     * */
+    Pagination.init($("#ht-page"), pageChange);
+
+    /*
+    * 首次调用
+    * @param  object:翻页容器对象
+    * @param  number:当前页
+    * @param  number:总页数
+    * @param  number:每页数据条数
+    * */
+   	var Request = getRequest();
+	var page = Number(Request["page"]);	//获取用户名
+	if(page == null || isNaN(page) || page<0){
+		page = 0;
+	}
+	Pagination.Page($("#ht-page"), page, recordCount, pageSize);
+    
+    /*
+     * 定义回掉函数
+     * @param  number:跳转页
+     * */
+    function pageChange(i) {
+    	window.location.search = ("?page=" + i + "");
+      //  Pagination.Page($("#ht-page"), i, recordCount, pageSize);
+    }
+    
+    
+    function getRequest() { //用于获取表单提交的数据
+		var url = window.location.search; //获取url中"?"符后的字串     
+		var theRequest = new Object();
+		if(url.indexOf("?") != -1) {
+			var str = url.substr(1);
+			strs = str.split("&");
+			for(var i = 0; i < strs.length; i++) {
+				//就是这句的问题  
+				theRequest[strs[i].split("=")[0]] = decodeURI(strs[i].split("=")[1]);
+				//之前用了unescape()  
+				//才会出现乱码    
+			}
+		}
+		return theRequest;
+	}
+</script>
+</body>
+</html>

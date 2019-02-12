@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+	<constant name="struts.devMode" value="true" />
+
+<!--<package name="myblog" extends="struts-default">
+	<action name="register" class="com.lzx.blog.action.LoginAction" method="execute">
+		<result name="index">/index.jsp</result>
+		<result name="register">/register.jsp</result>
+	</action>
+</package>-->
+
+  <package name="ajax_json" namespace="/" extends="json-default">
+  <!-- 本处的id就是ajax url的值，class引用了Spring 配置Action的id-->
+    <action name="login" class="com.lzx.blog.action.LoginAction" method="login">
+    	<result name="success" type="json"/>
+    	<result name="error" type="json"/>
+    </action>
+   <action name="cancellation" class="com.lzx.blog.action.LoginAction" method="cancellation">
+    	<result name="success" type="json"/>
+    	<result name="error" type="json"/>
+    </action>
+    <action name="register" class="com.lzx.blog.action.RegisterAction" method="execute">
+    	<result name="success" type="json"/>
+    	<result name="error" type="json"/>
+    </action>
+    <action name="post*" class="com.lzx.blog.action.ArticleAction" method="{0}">
+    	<result name="success" type="json"/>
+    	<result name="error" type="json"/>
+    </action>
+    <action name="load*" class="com.lzx.blog.action.LoadArticleAction" method="{0}">
+    	<result name="success" type="json"/>
+    	<result name="error" type="json"/>
+    </action>     
+    <action name="userInfo*" class="com.lzx.blog.action.LoadUserInfoAction" method="{0}">
+    	<result name="success" type="json"/>
+    	<result name="error" type="json"/>
+    </action> 
+    <action name="relation_*" class="com.lzx.blog.action.RelationAction" method="{0}">
+    	<result name="success" type="json"/>
+    	<result name="error" type="json"/>
+    </action>        
+  </package>
+</struts>    

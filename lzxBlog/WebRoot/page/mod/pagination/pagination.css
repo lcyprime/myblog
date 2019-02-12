@@ -1,0 +1,191 @@
+.ht-page {
+	padding: 30px;
+	text-align: center
+}
+
+.ht-page span {
+	vertical-align: middle
+}
+
+.ht-page a {
+	text-decoration: none;
+	color: #555;
+	outline: 0
+}
+
+.ht-page .pagebtn {
+	width: 52px;
+	height: 30px;
+	background: #1875f0;
+	border: 0;
+	border-radius: 4px;
+	color: #fff;
+	font-size: 14px;
+	cursor: pointer
+}
+
+.ht-page .pagebtn:hover {
+	background: #1875f0
+}
+
+.ht-page .previous {
+	display: inline-block;
+	background-color: #FFFFFF;
+	height: 30px;
+	line-height: 30px;
+	border: 3px solid #e9e9e9;
+	border-radius: 4px;
+	background: url(/lzxBlog/page/mod/pagination/img/page_left_img.png) no-repeat center
+}
+
+.ht-page .previous:hover {
+	border: 3px solid #FE9A2E;
+	background: url(/lzxBlog/page/mod/pagination/img/page_left_hover_img.png) no-repeat center
+}
+
+/*.ht-page .previous.disable {
+	display: inline-block;
+	padding: 0 15px;
+	background: url(img/page_left_disabled.png) no-repeat center;
+	cursor: default
+}
+
+.ht-page .previous.disable:hover {
+	background: url(img/page_left_disabled.png) no-repeat center
+}*/
+
+
+.ht-page .previous a {
+	display: inline-block;
+	height: 30px;
+	line-height: 30px;
+	padding: 0 15px
+}
+
+.ht-page .next {
+	display: inline-block;
+	height: 30px;
+	line-height: 30px;
+	background-color: #FFFFFF;
+	border: 3px solid #e9e9e9;
+	border-radius: 4px;
+	background: url(/lzxBlog/page/mod/pagination/img/page_right_img.png) no-repeat center
+}
+
+.ht-page .next:hover {
+	border: 3px solid #FE9A2E;
+	background: url(/lzxBlog/page/mod/pagination/img/page_right_hover_img.png) no-repeat center
+}
+/*
+.ht-page .next.disable {
+	display: inline-block;
+	padding: 0 15px;
+	cursor: default;
+	background: url(img/page_right_disabled.png) no-repeat center
+}
+
+.ht-page .next.disable:hover {
+	
+	background: url(img/page_right_disabled.png) no-repeat center
+}*/
+
+.ht-page .next a {
+	display: inline-block;
+	height: 30px;
+	line-height: 30px;
+	padding: 0 15px
+}
+
+.ht-page .num {
+	display: inline-block;
+	height: 30px;
+	line-height: 30px;
+	background-color: #FFFFFF;
+	border: 1px solid #e9e9e9;
+	margin: auto 10px;
+	border-radius: 4px;
+}
+
+.ht-page .num.current{
+	color: #FFFFFF;
+	padding: 0 15px;
+	background: #FE9A2E;
+}
+
+.ht-page .num a {
+	display: inline-block;
+	height: 30px;
+	line-height: 30px;
+	padding: 0 15px;
+}
+.ht-page .num:hover{
+	border: 1px solid #FE9A2E;
+}
+.ht-page .num:hover a{
+	color: #FE9A2E;
+}
+
+.ht-page .dots {
+	display: inline-block;
+	height: 30px;
+	line-height: 30px;
+	padding: 0 5px
+}
+
+.ht-page .total {
+	margin-left: 20px;
+	margin-right: 10px
+}
+
+.ht-page .total.total_page {
+	margin-left: 5px;
+	margin-right: 5px
+}
+
+.ht-page .page_jump {
+	margin: 0 10px
+}
+
+.ht-page .pageInput {
+	width: 50px;
+	height: 30px;
+	border: 1px solid #e9e9e9;
+	outline: 0;
+	border-radius: 4px;
+	text-align: center
+}
+
+.ht-page .pageInput:focus {
+	border: 1px solid #1875f0
+}
+
+@media screen and (max-width:799px) {
+	.ht-page {
+		padding: 10px 0
+	}
+
+	.ht-page .num,.ht-page .dots,.ht-page .total {
+		display: none
+	}
+
+	.ht-page .num.current {
+		display: inline-block;
+		padding: 0 10px
+	}
+
+	.ht-page .total.total_page {
+		display: inline-block
+	}
+
+	.ht-page .pageInput,.ht-page .pagebtn {
+		width: 40px
+	}
+
+	.ht-page .pagebtn {
+		display: none
+	}
+
+	.ht-page .page_jump {
+		margin: 0 5px
+	}
+}

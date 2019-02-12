@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../js/jquery.js" ></script>
+		<script type="text/javascript" src="core.js" ></script>
+		<script type="text/javascript" src="enc-base64.js.js" ></script>
+	</head>
+	<body>
+		<button class="btn btn-primary" onclick="javascript:base64_decode();">BASE64解码 </button>
+		<button class="btn btn-primary" onclick="javascript:base64_encode();">BASE64编码</button>
+		<div id="ts1" style="display: none;">
+			<p>内容</p><p>&nbsp;&nbsp;&nbsp;&nbsp;空间看了三等奖风口浪尖克鲁赛德房间辣死人<br/></p><p>到浮空六点十分尽快鲁大师进口量的jf&nbsp;</p><p>地方电视剧反馈来得及联发科假<span style="text-decoration: underline;">的看浪费建档立卡积分来看待荆防颗粒电视剧分开了圣诞节看了房间圣诞快乐防静电时空裂缝交配解放东路可使肌肤考虑到缴费考虑到缴费考虑到荆防颗粒电视剧分开了妲己防来开电视剧弗兰</span>克兼容发文件看相册是你经常密训新窗口是环境商店离开家分手快乐飞机离开色粉尽快鲁大师大范甘迪说&nbsp;的放</p><p>&nbsp;&nbsp;&nbsp;&nbsp;联发科假的看浪费建档立卡积分来看<span style="color: rgb(250, 192, 143);">待荆防颗粒电视剧分开了圣诞节看了房间圣诞快乐防静电时空裂缝交配解放东路可使肌肤考虑到缴费考虑到缴费考虑到荆防颗粒电视剧分开了妲己防来开电视剧弗兰克兼容发文件看</span>相册是你经常密训新窗口是环境商店离开家分手快乐飞机离开色粉尽快鲁大师大范甘迪说&nbsp;的放联发科假的看浪费建档立卡积分来看待荆防颗粒电视剧分开了圣诞节看了房间圣诞快乐防静电时空裂缝交配解放东路可使肌肤考虑到缴费考虑到缴费考虑到荆防颗粒电视剧分开了妲己防来开电视剧弗兰克兼容发文件看相册是<span style="color: rgb(192, 80, 77);">你经常密训新窗口是环境商店离开家分手快乐飞机离开色粉尽快鲁大师大范甘迪说&nbsp;的放联发科假的看浪费</span>建档立卡积分来看待荆防颗粒电视剧分开了圣诞节看了房间圣诞快乐防静电时空裂缝交配解放东路可使肌肤考虑到缴费考虑到缴费考虑到荆防颗粒电视剧分开了妲己防来开电视剧弗兰克兼容发文件看相册是你经常密训新窗口是环境商店离开家分手快乐飞机离开色<strong>粉尽快鲁大师大范甘迪说&nbsp;的放</strong></p><p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;联发科假的看浪费建档立卡积分来看待<span style="font-size: 24px;">荆防颗粒电视剧分开了圣诞节看了房间圣</span>诞快乐防静电时空裂缝交配解放东路可使肌肤考虑到缴费考虑到缴费考虑到荆防颗粒电视剧分开了妲己防来开电视剧弗兰克兼容发文件看相册是你经常密训新窗口是环境商店离开家分手快乐飞机离开色粉尽快鲁大师大范甘迪说&nbsp;的放</strong></p><p><strong><strong style="white-space: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;粒电视剧分开了妲己防来开电视剧弗兰克兼容发文件看相册是你经常密训新窗口是环境商店离开家分手快乐飞机离开色粉尽快鲁大师大范甘迪说&nbsp;的放</strong><strong style="white-space: normal;">粒电视剧分开了妲己防来开电视剧弗兰克兼容发文件</strong><span style="color: rgb(255, 255, 0);"><em>看相册是你经常密训新窗口是环境商店离开家分手快乐飞机离开色粉尽快鲁大师大范甘迪说&nbsp;的放</em><strong style="white-space: normal;">粒电视剧分</strong></span><strong style="white-space: normal;">开了妲己防来开电视剧弗兰克兼容发文件看相册是你经常密训新窗口是环境商店离开家分手快乐飞机离开色粉尽快鲁大师大范甘迪说&nbsp;的放</strong><strong style="white-space: normal;">粒电视剧分开了妲己防来开电视剧弗兰克兼容发文件看相册是你经常密训新窗口是环境商店离开家分手快乐飞机离开色粉尽快鲁大师大范甘迪说&nbsp;的放</strong><strong style="white-space: normal;">粒电视剧分开了妲己防来开电<span style="font-size: 36px;">视剧弗兰克兼容发文件看相册</span>是你经常密训新窗口是环境商店离开家分手快乐飞机离开色粉尽快鲁大师大范甘迪说&nbsp;的放</strong></strong></p>
+		</div>
+		<div id="ts2">
+		</div>
+		<div id="ts3">
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	
+function base64_encode(){		//编码
+	var str=CryptoJS.enc.Utf8.parse($("#ts1").html());
+	var base64=CryptoJS.enc.Base64.stringify(str);
+	$("#ts2").html(base64);
+	alert(base64);
+}
+function base64_decode(){		//解码
+	var words  = CryptoJS.enc.Base64.parse($("#ts2").html());
+	$("#ts3").html(words.toString(CryptoJS.enc.Utf8));
+}
+
+
+//function base64_encode(){		//编码
+//	var str=CryptoJS.enc.Utf8.parse($("#source").val());
+//	var base64=CryptoJS.enc.Base64.stringify(str);
+//	$("#result").val(base64);
+//}
+//function base64_decode(){		//解码
+//	var words  = CryptoJS.enc.Base64.parse($("#result").val());
+//	$("#source").val(words.toString(CryptoJS.enc.Utf8));
+//}
+</script>

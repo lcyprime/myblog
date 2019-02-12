@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>lzxBlog - 注 册</title>
+
+<link rel="stylesheet" href="/lzxBlog/page/css/register.css" />
+<script type="text/javascript" src="/lzxBlog/page/js/jquery.js"></script>
+<script type="text/javascript" src="/lzxBlog/page/js/register.js"></script>
+
+</head>
+<body>
+	<div>
+		<div class="Logister">
+			<div class="touMingBG"></div>
+			<h1>欢迎注册</h1>
+			<div class="tReg" id="tReg">
+				<div
+					style="width: 100%; height:20px;font-size: 19px; color: red;margin-bottom: 20px;"
+					id="tips"></div>
+				<form action="register.action" method="post">
+					<div>
+						<p>用户账号</p>
+						<input type="text" name="usernum" id="userNum" class="tLogInput"
+							required="required" placeholder="用户账号" oninput="removeTips()" />
+					</div>
+					<div>
+						<p>密&nbsp;&nbsp;码</p>
+						<input type="password" name="password" id="passWord"
+							class="tLogInput" required="required" placeholder="登录密码"
+							oninput="removeTips()" />
+					</div>
+					<div>
+						<p>确认密码</p>
+						<input type="password" name="rpassword" id="rpassWord"
+							class="tLogInput" required="required" placeholder="确认密码"
+							oninput="removeTips()" />
+					</div>
+					<div>
+						<input type="button" value="注  册" id="tLogSubmit"
+							class="tLogSubmit" onclick="doRegister()" />
+					</div>
+				</form>
+			</div>
+			<div class="GOregister">
+				<a href="Login.html">返 回 登 录</a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

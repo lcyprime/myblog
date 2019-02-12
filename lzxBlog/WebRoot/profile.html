@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<!--
+用于动态load()	
+add_HTMLmod_id {
+	nav
+	article_list
+	fotter_bottom
+	info_right
+}
+-->
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta name="format-detection" content="telephone=no">
+		<title>lzxBlog - 首页</title>
+		<link rel="stylesheet" href="/lzxBlog/page/css/drop_default.css" />		
+		<link rel="stylesheet" href="/lzxBlog/page/css/profile/profile.css" />			<!--自己-->
+
+		<script type="text/javascript" src="/lzxBlog/page/js/jquery.js"></script>
+		<script type="text/javascript" src="/lzxBlog/page/js/profile/profile.js" ></script> 		<!--自己-->
+		<script type="text/javascript" src="/lzxBlog/page/js/load_mod.js"></script>
+	</head>
+
+<body style="min-width: 1280px; display: block; background-color: #f4f4f4">
+	<!--用于插入nva-->
+	<div id="nav" style="margin-bottom: 110px;"></div>
+
+	<div class="u center">
+
+		<div id="content" class="content">
+			<div style="text-align: left; margin: 10px 0px 50px 0px; height: 50px; line-height: 50px;">
+			<h1 style="float: left; " >个人资料</h1>
+			<p style="float: right;" class="" id="changeBackgroundImg">更换背景图片</p>
+			</div>
+			<div id="profile_table" style="width: 750px;overflow: hidden;"></div>
+		</div>
+	</div>
+</body>
+<div id="profile_isLogon" style="display: none;"></div>
+<div id="isLogin" style="display: none;"></div>
+
+<script type="text/javascript">
+var serverInfo = new Object();
+	serverInfo.rs = "ok";
+</script>
+
+<style type="text/css">
+.u {
+	width:800px;
+}	
+.content {
+	width: 100%;
+	height: auto;
+	background:rgba(255,255,255,0.85);
+	border-radius:30px;
+	overflow: hidden;
+	padding: 20px;
+}
+</style>
+
+</html>
+
+

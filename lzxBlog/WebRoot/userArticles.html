@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<!--
+用于动态load()	
+add_HTMLmod_id {
+	nav
+	article_list
+	fotter_bottom
+}
+-->	
+	<head>
+		<meta charset="UTF-8">
+		<title> -的文章</title>
+		<link rel="stylesheet" href="/lzxBlog/page/css/drop_default.css" />
+		<link rel="stylesheet" href="/lzxBlog/page/mod/pagination/pagination.css">
+		<script type="text/javascript" src="/lzxBlog/page/js/jquery.js"></script>
+		<script type="text/javascript" src="/lzxBlog/page/js/load_mod.js"></script>
+	</head>
+	
+	<body style="min-width: 1280px; display: none; background-color: #f4f4f4">
+		<!--用于插入nva-->
+		<div id="nav"></div>
+		
+		<div class="u center">
+			
+			<div id="content" class="content">
+				<div class="write_article">
+					<h1 id="write_article_name"></h1>
+					<a href="/lzxBlog/ueditor/myWrite.html">发表文章</a>
+				</div>
+				<div id="info_right" ></div>
+				<div id="article_list" style="float: left; width: 640px;  background:rgba(255,255,255,1);"></div>	
+			</div>
+				<div style="width: 960px; background:rgba(255,255,255,0.7);">
+					<div id="userArticle-ht-page" class="ht-page"></div>
+				</div>		
+		</div>
+		<div id="fotter_bottom"></div>	
+	</body>
+	
+<script src="/lzxBlog/page/mod/pagination/pagination.js"></script>
+	
+<style type="text/css">
+ .content {
+		width: 920px;
+		background-color: white;
+		margin-top:30px;
+		overflow: hidden;
+		padding: 20px;
+		background:rgba(255,255,255,0.7);
+	}
+.u {
+	width:920px;
+}
+.article_list {
+	width: 600px;
+}	
+.center{
+	text-align: center;
+}
+/* 	.show_more{
+		margin-top: 15px;
+		font-size: 19px;
+		width: 150px;
+		height: 50px;
+		border: 1px #3083ff solid;
+	}
+	.show_more:hover{
+		color: #3083ff;
+	}
+.content {
+	width: 870px;
+	background-color: white;
+	overflow: hidden;
+	padding: 20px;
+} */
+.write_article{
+	width: 870px;
+	margin: 30px 0px;
+	padding-bottom: 50px;
+	font-size:20px;
+}
+.write_article h1{
+	float:left;
+	text-align:left;
+	width:680px;
+	height:60px;
+
+}
+.write_article a{
+	float:right;
+	width:120px;
+	height:60px;
+	line-height:60px;
+	color:#FE9A2E;
+	background-color:#FFFFFF;
+	border:1px solid #FE9A2E;
+}
+.write_article a:HOVER{
+	color:#FFFFFF;
+	background-color:#FE9A2E;
+	border:1px solid #000000;
+}
+
+</style>
+</html>

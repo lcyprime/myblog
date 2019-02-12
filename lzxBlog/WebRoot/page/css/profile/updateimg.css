@@ -1,0 +1,133 @@
+/*
+*上传背景图片
+*/
+.show_container{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	z-index: 1024;
+}
+
+
+#show{
+	position: relative;
+	width: 1030px;
+	height: 240px;
+	top:30%;
+	margin:auto;
+	padding-left: 10px;
+	padding-top: 10px;
+	background-color: #FFFFFF;
+	border-radius: 10px;
+	/*background-color: red;*/
+}
+
+.black-cloth {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0px;
+	top: 0px;
+	background: #111;
+	opacity: 0.6;
+}
+
+.btn {
+	padding: 6px 13px;
+	background: #40AFFE;
+	color: #FFFFFF;
+	border: 0px;
+	border-radius: 5px;
+	position: absolute;
+	right: 5px;
+	bottom: 5px;
+	cursor: pointer;
+}
+
+.upimg {
+	float: left;
+	width: 100px;
+	height: 100px;
+	margin-top: 50px;
+	border-radius: 5px;
+	border: dashed #999999;
+	background: url(/lzxBlog/page/img/ui/profile_addimg.png) no-repeat center;
+}
+
+.upimg input {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	opacity: 0;
+}
+
+#showui {
+	display: flex;
+	justify-content: flex-start;
+	float: left;
+}
+
+#showui li {
+	position: relative;
+	overflow: hidden;
+	display: inline-block;
+	width: 200px;
+	height: 200px;
+	border-radius: 5px;
+	margin-right: 5px;
+	
+}
+
+#showui li img.showimg {
+	width: 100%;
+	position: absolute;
+	left:0px;
+	right:0px;
+	top:50%;
+	bottom:50%;
+	margin:auto;
+	z-index: 6;
+}
+#showui li:hover{
+	border: 2 dashed #1E90FF;
+}
+#showui li:hover img{
+	 display: block;
+}
+#showui li:hover .showdiv{
+	background: rgba(0, 0, 0, .6);
+}
+.showdiv {
+	position: absolute;
+	z-index: 9;
+	bottom: 0;
+	width: calc(100% - 20px);
+	padding: 10px;
+	display: flex;
+	justify-content: space-around;
+	background: rgba(0, 0, 0, 0);
+}
+
+.showdiv img {
+	width: 20px;
+	height: 20px;
+	display: none;
+	cursor: pointer;
+}
+
+#showui li:first-child img.imgTurnLeft {
+	display: none;
+	cursor: no-drop;
+}
+
+#showui li:last-child img.imgTurnRight {
+	display: none;
+	cursor: no-drop;
+}
+
+.oneright {
+	display: none;
+	cursor: no-drop !important;
+}

@@ -1,0 +1,28 @@
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+pre, /* text formatting elements 文本格式元素 */
+fieldset, lengend, button, input, textarea/* th, td */ /* form elements 表单元素 */
+{ /* table elements 表格元素 */
+	display: block;
+    margin: 0;
+    padding: 0;
+}
+ul li{
+	list-style-type: none;
+}
+a{
+	text-decoration:none;
+}
+a:hover, a:visited, a:link, a:active {
+    color: black;
+}
+body { 
+	background-image:url(/lzxBlog/page/img/img2.jpg);
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+	background-size: cover;
+	margin:0px auto;
+	padding:0px;
+	font-family:"Microsoft YaHei",微软雅黑,"MicrosoftJhengHei",华文细黑,STHeiti,MingLiu ;	
+}
+

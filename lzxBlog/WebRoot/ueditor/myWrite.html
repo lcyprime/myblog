@@ -1,0 +1,184 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>发表文章</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <script type="text/javascript" charset="utf-8" src="third-party/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="ueditor.all.js"> </script>
+    <link rel="stylesheet" href="/lzxBlog/page/css/drop_default.css" />
+	<script type="text/javascript" src="/lzxBlog/page/js/load_mod.js"></script>
+	<script type="text/javascript" src="/lzxBlog/page/js/base64/core.js" ></script>
+	<script type="text/javascript" src="/lzxBlog/page/js/base64/enc-base64.js.js" ></script>
+    <script type="text/javascript" charset="utf-8" src="lang/zh-cn/zh-cn.js"></script>
+</head>
+	<body>
+		<!--用于插入nva-->
+	<div id="nav"></div>
+
+	<div class="w center">
+		<div class="content">
+			<div>
+				<input type="text" name="article_title" id="article_title" class="article_title" required="required" placeholder="文章题目" />
+			</div>
+		    <script id="editor" type="text/plain" style="width: 1000px;height:500px; text-align:left;" ></script>
+			<div id="btns">
+			 	<button class="s_btn" onclick="getContent()" >获得内容</button>
+			</div>
+		</div>
+	</div>
+	<div id="fotter_bottom"></div>
+	</body>
+	<div id="mimi" style=" background-color: yellow; display: none;" ></div>
+	
+	<div id="isLogin" style="display: none;"></div>
+	<div id="the-myWrite-html" style="display: none;"></div>
+<style type="text/css">
+
+.w {
+	width: 1000px;
+	margin-top: 40px;
+/*	background-color: red;*/
+/*	padding: 50px 0px 0px 200px;*/
+}
+.content {
+	width: 100%;
+	height: auto;
+	background:rgba(255,255,255,0.7);
+	border-radius:15px;
+	overflow: hidden;
+	padding: 20px;
+}
+.article_title {
+	width: 100%;
+	height: 25px;
+	font-size: 22px;
+ 	margin: 20px auto;
+}
+.s_btn{
+	margin: 20px 0px 10px 0px;
+	background: #3385ff;
+	border: 0;
+    cursor: pointer;
+	border-bottom: 1px solid #2d78f4;
+	color: #fff;
+    letter-spacing: 1px;
+	width: 100px;
+	height: 34px;
+}
+.s_btn:HOVER{
+	box-shadow: 1px 1px 20px #888888;
+}
+
+</style>
+
+<script type="text/javascript">
+    //实例化编辑器
+    //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
+    var ue = UE.getEditor('editor');
+    //获取内容  相当于提交按钮
+   function getContent() {
+  		var article_title = $("#article_title").val();
+   		if(hasContent() && article_title!=""){
+   		var srcOrurl = new Array();
+	     $("#mimi").html(UE.getEditor('editor').getContent());	//获取HTML 并写进#mimi
+	     var contentText = $("#mimi").text().toString();
+	    	 contentText = contentText.substr(0,500);
+	     	 contentText = contentText.replace("<","&lt;");
+	     	 contentText = contentText.replace(">","&gt;");
+	     $("#mimi img").each(function(){	//图片
+	     		var type = "src";			
+				var src = $(this).attr(type);
+			   	var srcED = getRrlOrSrc(src);
+			   	if(srcED != null && typeof(srcED) != "undefined"){
+			   		srcOrurl.push(srcED);	   		
+					var str=src.replace('/upload_temp/','/upload/');      //改变路径
+		     		$(this).attr(type,str);
+			   	}
+	        });
+         $("#mimi p a").each(function(){	//附件
+         		var type = "href";
+				var src = $(this).attr(type);
+			   	var srcED = getRrlOrSrc(src);
+			   	if(srcED != null && typeof(srcED) != "undefined"){
+			   		srcOrurl.push(srcED); 		
+					var str=src.replace('/upload_temp/','/upload/');      //改变路径
+		     		$(this).attr(type,str);
+			   	}
+	        });
+	       $("#mimi video").each(function(){	//视频
+	      		var type = "src";
+				var src = $(this).attr(type);
+			   	var srcED = getRrlOrSrc(src);
+			   	if(srcED != null && typeof(srcED) != "undefined"){	
+			   		srcOrurl.push(srcED);   		
+					var str=src.replace('/upload_temp/','/upload/');      //改变路径
+		     		$(this).attr(type,str);
+			   	}
+	        });
+	       	var str=CryptoJS.enc.Utf8.parse($("#mimi").html());
+			var contentStr=CryptoJS.enc.Base64.stringify(str);
+			
+			srcOrurl = JSON.stringify(srcOrurl);
+			doSaveHTMLStr(article_title,contentStr,contentText,srcOrurl);
+        }
+    }
+    //插入html代码
+    function insertHtml(html) {
+        var inser =  UE.getEditor('editor').execCommand('insertHtml',  html);
+    }
+
+	//获取纯文本
+    function getContentTxt() {
+       return UE.getEditor('editor').getContentTxt();
+    }
+    //判断是否有内容
+    function hasContent() {
+        return UE.getEditor('editor').hasContents();
+    }
+    //提交数据 转换文件位置 和改变src/url
+    function doSaveHTMLStr(article_title,contentStr,contentText,srcOrurl){
+  
+    	$.ajax({
+			type : 'post',
+			url : 'postArticle.action', //此处的Action要与struts.xml中的action的name对应
+			dataType : 'json',
+			data : {
+				'title' : article_title,
+				'content' : contentStr,
+				'address' : srcOrurl,
+				'contentText' : contentText
+			},
+		success : function(r) {
+				if (r.result == "ok") {
+					alert("发表成功！");
+					window.location.replace("/lzxBlog/article/content.html?art=" + r.address);
+				}else if(r.result == "no"){
+					alert("发表时发生错误");
+				}
+			},
+		error : function(err) {
+				alert("发表时发生错误" + err);
+				window.location.reload();
+			}
+		}); 
+    }
+    
+    //用于移动文件
+    function getRrlOrSrc(src){
+    	if(src!=null && typeof(src) != "undefined"){
+    	var strG = src.match(/\/upload_temp(\/.*\/.*\/)(.*)/);
+			if(strG != null){
+				var srcs = new Array();
+			//	var srcs = {,strG[1],strG[2]};  
+				srcs.push(strG[0]); //    整个地址
+				srcs.push(strG[1]); //    /文件类型/时间/   
+				srcs.push(strG[2]); //    文件名.jpg	
+				return srcs;
+			}
+		}
+    }
+</script>
+
+</html>

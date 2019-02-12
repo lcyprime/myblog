@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<!--
+用于动态load()	
+add_HTMLmod_id {
+	nav
+	article_list
+	fotter_bottom
+}
+-->	
+	<head>
+		<meta charset="UTF-8">
+		<title> -的文章</title>
+		<link rel="stylesheet" href="/lzxBlog/page/css/drop_default.css" />
+		<link rel="stylesheet" href="/lzxBlog/page/mod/pagination/pagination.css">
+		<script type="text/javascript" src="/lzxBlog/page/js/jquery.js"></script>
+		<script type="text/javascript" src="/lzxBlog/page/js/load_mod.js"></script>
+	</head>
+	
+	<body style="min-width: 1280px; display: none; background-color: #f4f4f4" >
+		<!--用于插入nva-->
+		<div id="nav"></div>
+		
+		<div class="u center">
+			
+			<div id="content" class="content">
+			<div class="write_article">
+				<h1 id="write_article_name">我的收藏</h1>
+				<a href="/lzxBlog/ueditor/myWrite.html">发表文章</a>
+			</div>
+				<div id="article_list" style="float: left; background:rgba(255,255,255,1);"></div>	
+			</div>
+				<div id="collection-ht-page" class="ht-page"></div>		
+		</div>
+		<div id="fotter_bottom"></div>	
+	</body>
+	
+<script src="/lzxBlog/page/mod/pagination/pagination.js"></script>
+	
+<style type="text/css">
+.content {
+		width: 820px;
+		overflow: hidden;
+		padding: 10px 20px 20px 20px;
+	}
+.u {
+	width:880px;
+	margin-top: 30px;
+}	
+.center{
+	 background:rgba(255,255,255,0.7);
+	text-align: center;
+}
+/* 	.show_more{
+		margin-top: 15px;
+		font-size: 19px;
+		width: 150px;
+		height: 50px;
+		border: 1px #3083ff solid;
+	}
+	.show_more:hover{
+		color: #3083ff;
+	}
+.content {
+	width: 870px;
+	background-color: white;
+	overflow: hidden;
+	padding: 20px;
+} */
+.article_list {
+	width: 800px;
+}
+.write_article {
+	background:rgba(255,255,255,0);
+/* 	width: 870px; */
+
+	margin: 40px 0px;
+	padding-bottom: 50px;
+	font-size:20px;
+}
+.write_article h1{
+	float:left;
+	text-align:left;
+	width:680px;
+	height:60px;
+
+}
+.write_article a{
+	float:right;
+	width:120px;
+	height:60px;
+	line-height:60px;
+	color:#FE9A2E;
+	background-color:#FFFFFF;
+	border:1px solid #FE9A2E;
+}
+.write_article a:HOVER{
+	color:#FFFFFF;
+	background-color:#FE9A2E;
+	border:1px solid #000000;
+}
+.article_list .textts {
+	background:rgba(255,255,255,1);
+}
+</style>
+</html>

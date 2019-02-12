@@ -1,0 +1,55 @@
+.table_info{
+	position:relative;
+	
+}
+.table_info tr{
+	width: 200px;
+	height: 30px;
+}	
+	
+.sel_data select{
+	cursor:pointer;
+	height: 30px;
+	width: 100px;
+	border-radius:4px;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	border:solid 1px #cfcfcf;
+}
+.sel_sex select{
+	cursor:pointer;
+	height: 30px;
+	width: 100px;
+	border-radius:4px;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	border:solid 1px #cfcfcf;
+}
+.infoText{
+	width: 600px;
+	font-size: 18px;
+	height: 23px;
+}
+
+.profile_ui2{
+	display: none;
+}	
+.profile_ui1{
+	display: block;
+	
+}
+.saveInfo{
+	width: 75px;
+	height: 35px;
+	font-size: 18px;
+	border-radius:4px;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	background-color: #00BFFF;
+	border: 1px solid #000000;
+}
+.saveInfo:HOVER{
+	color: white;
+	background-color: #FE9A2E;
+	border: 1px solid #000000;
+}

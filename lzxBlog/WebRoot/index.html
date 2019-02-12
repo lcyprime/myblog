@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<!--
+用于动态load()	
+add_HTMLmod_id {
+	nav
+	article_list
+	fotter_bottom
+	info_right
+}
+-->
+	<head>
+		<meta charset="utf-8" />
+		<title>lzxBlog 首页</title>
+		<link rel="stylesheet" href="/lzxBlog/page/css/drop_default.css" />
+		<script type="text/javascript" src="/lzxBlog/page/js/jquery.js"></script>
+		<script type="text/javascript" src="/lzxBlog/page/js/load_mod.js"></script>
+	</head>
+
+	<body style="min-width: 1280px; display: none; background-color: #f4f4f4">
+		<!--用于插入nva-->
+		<div id="nav" style="margin-bottom: 110px;"></div>
+		<div class="u center">
+			<div id="content" class="content">
+			<h1 id="index_news">最新资讯  News</h1>
+				<div id="article_list" style="background:rgba(255,255,255,1);"></div>	
+			</div>
+			<input type="button" id="index_show_more" class="show_more smb" value="加载更多">
+			<p class="show_more smp">已全部加载</p>
+		</div>
+		<div id="fotter_bottom"></div>
+		
+	</body>
+	
+	
+<!-- css
+#########################################################################
+-->	
+	
+<style type="text/css">
+
+.u {
+	width:920px;
+}
+#index_news{
+	margin-top: 30px;
+    margin-bottom: 30px;
+}
+.smb{
+	display: block;
+}
+.smp{
+	line-height: 50px;
+	text-align: center;
+	display: none;
+}
+
+.show_more{
+	margin-top: 15px;
+	font-size: 19px;
+	background-color:#ffffff;
+	width: 150px;
+	height: 50px;
+	margin: 50px auto 50px auto;
+	border: 1px #3083ff solid;
+	cursor: pointer; /****/
+}
+.show_more:hover{
+	color: #3083ff;
+}
+
+.content {
+width: 870px;
+overflow: hidden;
+padding: 20px 30px 20px 20px;
+	background:rgba(255,255,255,0.7);
+}
+.write_article{
+	width: 870px;
+	margin: 40px 0px;
+	padding-bottom: 50px;
+	font-size:20px;
+}
+.article_list{
+	width: 830px
+}
+/* .write_article h1{
+	float:left;
+	width:180px;
+	height:60px;
+
+}
+.write_article a{
+	float:right;
+	width:120px;
+	height:60px;
+	line-height:60px;
+	color:#FE9A2E;
+	background-color:#FFFFFF;
+	border:1px solid #FE9A2E;
+}
+.write_article a:HOVER{
+	color:#FFFFFF;
+	background-color:#FE9A2E;
+	border:1px solid #000000;
+} */
+</style>
+
+</html>
+
+

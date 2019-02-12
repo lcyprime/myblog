@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>lzxBlog - 首页</title>
+		<link rel="stylesheet" href="/lzxBlog/page/css/drop_default.css" />
+		<script type="text/javascript" src="/lzxBlog/page/js/jquery.js"></script>
+		<script type="text/javascript" src="/lzxBlog/page/js/base64/core.js" ></script>
+		<script type="text/javascript" src="/lzxBlog/page/js/base64/enc-base64.js.js" ></script>
+		<script type="text/javascript" src="/lzxBlog/page/js/load_mod.js"></script>
+		<script type="text/javascript" src="/lzxBlog/page/js/content.js" ></script>
+	</head>
+	<body style="min-width: 1280px; display: block; background-color: #f4f4f4">
+		<!--用于插入nva-->
+		<div id="nav" style="margin-bottom: 80px;"></div>
+		<div style="">
+			<div id="content" class="content center">
+			<div id="article" class="article">
+				<h2 id="atitle">这是标题</h2>
+				<div class="article_content" id="atext" ></div>
+				<div id="doCollection">
+					<input type="button" id="collection_0" class="collection_this" value=" ✨  收   藏  " onclick="doCollection(1)" />
+					<input type="button" id="collection_1" class="collection_this" value=" 取 消 收 藏 " onclick="doCollection(0)" style="display: none;" />
+					<div id="upTime"></div>
+					<div id="CollNum"></div>
+				</div>
+				<div id="isLogin" style="display: none;"></div>
+ 				<div class="my_name" id="content-message-html">
+ 					<div id="content-message-html-is">
+						<textarea rows="3" cols="20" class="reply" id="reply" placeholder="发表评论"></textarea>
+						<input type="button" name="upreply" class="upreply" value="评 论" onclick="postContent()"/>
+					</div>
+					<div id="content-message-html-not" class="reply"  style="display: none; margin-bottom: -10px; text-align: center; line-height: 150px;border: 1px solid #c5c5c5; color: #c5c5c5;;" >
+						登录后可发表回复
+					</div>
+				</div>
+				<div class="article_reply" id="article_reply">
+					<ul></ul>
+				</div>
+			</div>	
+				<div id="info_right" style="text-align: center; margin: 10px 0px 0px 30px;"></div>
+			</div>
+		</div>
+		<div id="fotter_bottom"></div>
+	</body>
+	<style type="text/css">
+.content {
+	width: 1280px;
+	
+	overflow: hidden;
+	padding: 20px;
+	
+}
+#doCollection{
+	text-align:center;
+	margin: 30px auto 30px auto;
+	width: 92%;
+	height: 40px;
+}
+#doCollection input{
+	text-align:center;
+	font-size: 21px;
+	height: 100%;
+	float: left;
+}
+.collection_this{
+	background-color: #00B7EE;
+	color: white;
+	 cursor: pointer;
+	border: 1px solid #1006F1;
+}
+
+#doCollection div{
+	height: 100%;
+	margin-left: 20px;
+	line-height: 40px;
+	float: right;
+}
+.article{
+	float: left;
+	width: 1000px;
+	border: 1px solid #BDBDBD;
+	background: white;
+}
+
+.reply{
+	min-width: 95%;
+	min-height: 150px;
+ 	margin: auto;
+ 	margin-bottom:15px;
+	max-height: 300px;
+	max-width: 95%;
+	padding: 15px;
+	font-size: 22px;
+}
+.upreply{
+	float: right;
+	font-size: 19px;
+	width: 80px;
+	height: 40px;
+	 cursor: pointer;
+	border: 1px #3083ff solid;
+}
+#article h2{
+	width: 95%;
+	text-align: left;
+	margin: 30px auto 60px auto;
+	border-bottom: 1px solid #cccccc;
+}
+.article_content{
+	border-bottom: 1px solid #cccccc;
+	text-align:left;
+	margin: auto;
+	width: 95%;
+	background-color: white;
+	padding-bottom: 100px;
+}
+.article_reply{
+text-align:left;
+}
+.article_reply li{
+	margin: 50px auto;
+	background-color: white;
+	width: 92%;
+	height: auto;
+}
+.my_name{
+	margin: 0px auto 100px auto;
+	width: 95%;
+	text-align:left;
+	line-height: 20px;
+}
+#my_logo{
+	margin-right: 10px;
+	width: 40px;
+	border: 1px solid #BDBDBD;
+	border-radius: 50%;  /*圆角*/
+}
+.r_logo{
+	width: 70px;
+	border: 1px solid #BDBDBD;
+	border-radius: 50%;  /*圆角*/
+	margin: -20px 0px 0px 0px;
+}
+.article_reply .r_name{
+	position: relative;
+	width: 80%;
+	height: 30px;
+	color: #5191d2;
+	top: -75px;
+	left: 100px;
+	font-weight: bold;
+	font-size: 23px;
+	background-color: white;
+}
+.article_reply .r_content{
+	position: relative;
+	width: 85%;
+	top: -60px;
+	left: 100px;
+	word-wrap:break-word;
+	background-color: white;
+}
+.article_reply .r_time{
+	text-align: right;
+	padding-right: 20px;
+	height: 30px;
+	position: relative;
+	background-color: white;
+	top: -30px;
+	border-bottom: 1px solid #cccccc;
+	
+}
+</style>
+</html>
